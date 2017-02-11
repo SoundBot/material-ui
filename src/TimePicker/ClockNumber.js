@@ -31,20 +31,25 @@ function getStyles(props, context) {
     pos = pos / 5;
   }
 
-  const positions = [
-    [0, 5],
-    [54.5, 16.6],
-    [94.4, 59.5],
-    [109, 114],
-    [94.4, 168.5],
-    [54.5, 208.4],
-    [0, 223],
-    [-54.5, 208.4],
-    [-94.4, 168.5],
-    [-109, 114],
-    [-94.4, 59.5],
-    [-54.5, 19.6],
-  ];
+  const posarr = [];
+  const height = 280;
+  const width = 260;
+  const radius = 110;
+
+  for (let k = -3; k < 9; k++) {
+    let rads =  (k * 7.5 * Math.PI) / 180;
+    const x = radius * Math.cos(rads);
+    const y = radius * Math.sin(rads);
+
+    // rotation
+    rads =  (-180 * 30 * Math.PI) / 180;
+    const x1 = x * Math.cos(rads) + y * Math.sin(rads);
+    const y1 = -1 * x * Math.sin(rads) + y * Math.cos(rads) + 115;
+
+    posarr.push([x1, y1]);
+  }
+
+  const positions = posarr;
 
   const innerPositions = [
     [0, 40],

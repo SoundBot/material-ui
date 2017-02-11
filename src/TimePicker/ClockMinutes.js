@@ -90,8 +90,8 @@ class ClockMinutes extends Component {
 
   getMinuteNumbers() {
     const minutes = [];
-    for (let i = 0; i < 12; i++) {
-      minutes.push(i * 5);
+    for (let i = 0; i < 60; i++) {
+      minutes.push(i);
     }
     const selectedMinutes = this.props.initialMinutes;
     let hasSelected = false;
